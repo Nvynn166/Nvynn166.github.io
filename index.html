@@ -1,153 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi presentación</title>
-
-    <style>
-
-        body{
-            margin:0;
-            font-family: Georgia, serif;
-            background-color:#f5f5f5;
-            color:#222;
-        }
-
-        .container{
-            display:flex;
-            min-height:100vh;
-        }
-
-        /* MENÚ IZQUIERDO */
-
-        .sidebar{
-            width:250px;
-            background:white;
-            padding:30px;
-            border-right:1px solid #dcdcdc;
-        }
-
-        .sidebar img{
-            width:180px;
-            border-radius:8px;
-            margin-bottom:30px;
-        }
-
-        .sidebar a{
-            display:block;
-            color:#2e8b7d;
-            text-decoration:none;
-            margin:18px 0;
-            font-size:20px;
-        }
-
-        /* CONTENIDO */
-
-        .content{
-            flex:1;
-            padding:50px;
-        }
-
-        h1{
-            color:#2e8b7d;
-            font-size:55px;
-            margin-bottom:10px;
-        }
-
-        h2{
-            color:#2e8b7d;
-            margin-top:40px;
-        }
-
-        p, li{
-            font-size:22px;
-        }
-
-        .section{
-            margin-bottom:40px;
-            border-top:1px solid #dcdcdc;
-            padding-top:20px;
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naysha Nadinne · CV clásico</title>
+  <style>
+    /* Estilo clásico, sin adornos, tipografía serif, bordes sobrios */
+    body {
+      background: #fcfcf7;
+      margin: 40px 20px;
+      font-family: 'Times New Roman', Times, serif;
+      color: #111;
+      display: flex;
+      justify-content: center;
+    }
+    .page {
+      max-width: 1000px;
+      width: 100%;
+      background: white;
+      padding: 40px 45px 50px 45px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border: 1px solid #ccc;
+    }
+    /* títulos y separadores */
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin: 0 0 6px 0;
+      padding-bottom: 2px;
+      border-bottom: 2px solid #222;
+      text-transform: uppercase;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .subhead {
+      font-size: 18px;
+      font-weight: 400;
+      margin-top: -2px;
+      margin-bottom: 22px;
+      color: #2c2c2c;
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 14px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 28px 0 14px 0;
+      border-bottom: 1px solid #999;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 20px 0 8px 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    /* tabla clásica para datos personales y profesores */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 12px 0;
+      font-size: 16px;
+    }
+    td {
+      padding: 6px 8px 6px 0;
+      vertical-align: top;
+      border-bottom: 1px dotted #ccc;
+    }
+    .label {
+      font-weight: 600;
+      width: 210px;
+      white-space: nowrap;
+    }
+    .label-sm {
+      width: 200px;
+    }
+    /* lista de profesores con estilo sencillo */
+    .prof-list {
+      margin: 6px 0 8px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .prof-list li {
+      padding: 4px 0 4px 0;
+      border-bottom: 1px dotted #e0e0e0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .prof-curso {
+      font-weight: 600;
+      width: 280px;
+      display: inline-block;
+    }
+    .prof-nombre {
+      display: inline-block;
+    }
+    .prof-nombre a {
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px dotted #888;
+    }
+    .prof-nombre a:hover {
+      border-bottom: 1px solid #000;
+    }
+    /* tecnologías y hobbies */
+    .tech-tags {
+      margin: 8px 0 4px 0;
+      font-size: 17px;
+    }
+    .tech-tags span {
+      display: inline-block;
+      margin-right: 28px;
+    }
+    .hobby-list {
+      font-size: 17px;
+      margin: 6px 0 2px 0;
+    }
+    /* perfiles con iconos */
+    .perfil-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 0;
+      flex-wrap: wrap;
+      border-bottom: 1px dotted #ddd;
+    }
+    .perfil-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+    .perfil-icon img {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    .perfil-link a {
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1px dotted #888;
+    }
+    .perfil-link a:hover {
+      border-bottom: 1px solid #000;
+    }
+    .red-academica {
+      margin-top: 6px;
+    }
+    .red-academica .perfil-item {
+      border-bottom: 1px dotted #ddd;
+      padding: 5px 0;
+    }
+    .red-academica .perfil-item:last-child {
+      border-bottom: none;
+    }
+    /* ajustes */
+    .mt-1 { margin-top: 4px; }
+    .mb-0 { margin-bottom: 0; }
+    .small-note { font-size: 15px; color: #333; }
+    .clearfix { clear: both; }
+    a { color: #111; }
+    /* sin adornos, sin bordes redondeados, sin sombras */
+    hr { border: none; border-top: 1px solid #bbb; margin: 18px 0; }
+  </style>
 </head>
 <body>
+<div class="page">
 
-<div class="container">
+  <!-- Título principal -->
+  <h1>Naysha Nadinne Puquio Gonzalo</h1>
+  <div class="subhead">Estudiante de Ingeniería de Inteligencia Artificial · UNMSM</div>
 
-    <!-- MENÚ -->
+  <!-- Presentación -->
+  <h2>Presentación</h2>
+  <p style="font-size: 17px; margin-top: 6px; line-height: 1.5;">
+    Hola, soy estudiante de primer ciclo de la carrera de <strong>Ingeniería de Inteligencia Artificial</strong> 
+    en la Universidad Nacional Mayor de San Marcos. Me apasiona la tecnología y el aprendizaje continuo; 
+    en esta página comparto mi información académica y personal.
+  </p>
 
-    <div class="sidebar">
+  <!-- Datos personales -->
+  <h2>Datos personales</h2>
+  <table>
+    <tr><td class="label">Nombres:</td><td>Naysha Nadinne</td></tr>
+    <tr><td class="label">Apellidos:</td><td>Puquio Gonzalo</td></tr>
+    <tr><td class="label">Fecha de nacimiento:</td><td>15 de enero de 2009</td></tr>
+    <tr><td class="label">Universidad:</td><td>Universidad Nacional Mayor de San Marcos</td></tr>
+    <tr><td class="label">Carrera (2026 I):</td><td>Inteligencia Artificial</td></tr>
+  </table>
 
-        <img src="foto.jpg" alt="Mi foto">
+  <!-- Profesores 2026 I -->
+  <h2>Profesores · periodo 2026 I</h2>
+  <ul class="prof-list">
+    <li><span class="prof-curso">Introducción a la ciencia de la computación:</span> <span class="prof-nombre"><a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Ernesto Cuadros Vargas</a></span></li>
+    <li><span class="prof-curso">Cálculo I:</span> <span class="prof-nombre"><a href="https://www.linkedin.com/in/marcos-maravi/" target="_blank">Edwin Marcos Maraví Percca</a></span></li>
+    <li><span class="prof-curso">Álgebra y Geometría analítica:</span> <span class="prof-nombre"><a href="https://www.linkedin.com/in/hellen-gloria-terreros-navarro-a62bb5385/" target="_blank">Hellen Gloria Terreros Navarro</a></span></li>
+    <li><span class="prof-curso">Métodos de estudio universitario:</span> <span class="prof-nombre"><a href="https://www.linkedin.com/in/miryam-cosme-felix-22a52140/" target="_blank">Miryam Cosme Félix</a></span></li>
+    <li><span class="prof-curso">Medio ambiente y desarrollo sostenible:</span> <span class="prof-nombre"><a href="https://www.linkedin.com/in/petronila-mérida-fanola-merino-5e6f7g8h" target="_blank">Petronila Mérida Fanola Merino</a></span></li>
+    <li><span class="prof-curso">Redacción y técnicas de comunicación efectiva I:</span> <span class="prof-nombre"><a href="https://www.linkedin.com/in/ana-eylin-coronel-tello-8934a4140/" target="_blank">Ana Eylin Coronel Tello</a></span></li>
+    <li><span class="prof-curso">Desarrollo personal y liderazgo:</span> <span class="prof-nombre"><a href="https://www.linkedin.com/in/luz-basualdo-81b88017b/" target="_blank">Luz Basualdo Porras</a></span></li>
+  </ul>
 
-        <a href="#">Inicio</a>
-        <a href="#">Información personal</a>
-        <a href="#">Mi carrera</a>
-        <a href="#">Cursos</a>
-        <a href="#">Profesores</a>
-        <a href="#">Compañeros</a>
+  <!-- Tecnologías -->
+  <h2>Tecnologías que estoy aprendiendo</h2>
+  <div class="tech-tags">
+    <span>HTML</span>
+    <span>GitHub</span>
+    <span>Python</span>
+  </div>
 
-    </div>
+  <!-- Perfiles -->
+  <h2>Mis perfiles</h2>
+  <div class="perfil-item">
+    <span class="perfil-icon"><span style="font-size:22px;">✉️</span></span>
+    <span class="perfil-link"><a href="mailto:naypuquiog@gmail.com">naypuquiog@gmail.com</a></span>
+  </div>
+  <div class="perfil-item">
+    <span class="perfil-icon">
+      <!-- icono github simple (texto) -->
+      <span style="font-size:22px;">🐙</span>
+    </span>
+    <span class="perfil-link"><a href="https://github.com/Nvynn166" target="_blank">Nvynn166</a> (GitHub)</span>
+  </div>
+  <div class="perfil-item">
+    <span class="perfil-icon">
+      <!-- icono linkedin simple -->
+      <span style="font-size:22px;">🔗</span>
+    </span>
+    <span class="perfil-link"><a href="https://www.linkedin.com/in/naysha-puquio-gonzalo-16ou6ts1de/" target="_blank">Naysha Nadinne Puquio Gonzalo</a> (LinkedIn)</span>
+  </div>
 
-    <!-- CONTENIDO -->
+  <!-- Red académica -->
+  <h2>Red académica</h2>
+  <div class="red-academica">
+    <div class="perfil-item"><span class="perfil-link"><a href="https://www.linkedin.com/in/lucero-huincho-huaman%C3%AD-732605343/" target="_blank">Lucero Huincho Huamaní</a></span></div>
+    <div class="perfil-item"><span class="perfil-link"><a href="https://www.linkedin.com/in/octavio-dante-valenzuela-pareja-32a044406/">Octavio Dante Valenzuela Pareja</a></span></div>
+    <div class="perfil-item"><span class="perfil-link"><a href="https://www.linkedin.com/in/yosue-humberto-fura-almanza-1018b4407/" target="_blank">Yosue Humberto Fura Almanza</a></span></div>
+  </div>
 
-    <div class="content">
+  <!-- Hobbies -->
+  <h2>Mis hobbies</h2>
+  <div class="hobby-list">Dibujar, Pintar, Tocar piano y guitarra.</div>
 
-        <h1>Naysha Nadinne Puquio Gonzalo</h1>
-
-        <p>
-            Estudiante de Ingeniería de Inteligencia Artificial
-        </p>
-
-        <div class="section">
-
-            <h2>Sobre mí</h2>
-
-            <p>
-                Soy estudiante universitaria de la universidad nacional mayor de San Marcos del período 2026 I
-            </p>
-
-        </div>
-
-        <div class="section">
-
-            <h2>Mi carrera</h2>
-
-            <p>
-                Ingeniería de Inteligencia Artificial
-            </p>
-
-        </div>
-
-        <div class="section">
-
-            <h2>Cursos</h2>
-
-            <ul>
-                <li>Introducción a la computación</li>
-                <li>Cálculo I</li>
-                <li>Álgebra y geometría analítica</li>
-                <li>Redacción</li>
-                <li>Desarrollo personal y liderazgo</li>
-                <li>Métodos de estudio universitario</li>
-                <li>Medio ambiente y desarrollo sostenible</li>
-            </ul>
-            
-            <h2>Compañeros</h2>
-
-<ul>
-    <li>Compañero 1</li>
-    <li>Compañero 2</li>
-    <li>Compañero 3</li>
-</ul>
-
-        </div>
-
-    </div>
-
+  <!-- Línea final clásica -->
+  <hr style="margin-top: 32px;" />
+  <div style="font-size: 15px; color: #444; text-align: right; margin-top: 6px;">
+    UNMSM · Facultad de Ingeniería de Sistemas e Informática
+  </div>
 </div>
-
 </body>
 </html>
